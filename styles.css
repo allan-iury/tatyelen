@@ -1,0 +1,121 @@
+body {
+    background-color: #ffe6e6;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/6yPntI4.png') no-repeat 10% 20%,
+                url('https://i.imgur.com/6yPntI4.png') no-repeat 80% 30%,
+                url('https://i.imgur.com/6yPntI4.png') no-repeat 50% 60%;
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    opacity: 0.3;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #ff4d4d;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.frase {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.container p {
+    font-size: 1.1em;
+    color: black;
+}
+
+.heart-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1em;
+    cursor: pointer;
+}
+
+.heart {
+    width: 100%;
+    height: 100%;
+    background-color: #ff4d4d;
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 34%, 85% 100%, 50% 80%, 15% 100%, 0% 34%);
+    transition: transform 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.photos {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.photos img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ff4d4d;
+}
+
+.botao-musica {
+    display: inline-block;
+    background: #ff4d4d;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.botao-musica:hover {
+    background: #e63946;
+}
+
+.open .heart {
+    transform: scale(0);
+}
+
+.open .photos {
+    display: flex;
+}
